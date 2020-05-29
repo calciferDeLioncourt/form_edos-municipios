@@ -1,3 +1,4 @@
+console.log('javascript para json');
 const estados = document.querySelector('#estado');
 const municipios = document.querySelector('#municipio');
 const inputMunicipio = document.querySelector('#input-municipio');
@@ -21,10 +22,10 @@ for( let i=0; i < btnFlecha.length; i++ ){
     })
 };
 estados.addEventListener('change', () => {
-    console.log(estados.value);
+    // console.log(estados.value);
 });
 municipios.addEventListener('change', () => {
-    console.log(municipios.value);
+    // console.log(municipios.value);
 });
 form.addEventListener('change', () => {
     if(estados.value != "Selecciona tu estado" && municipios.value != "Selecciona tu municipio"){
@@ -37,42 +38,24 @@ form.addEventListener('change', () => {
 form.addEventListener('submit', e => {
     e.preventDefault();
 });
-let datos = new FormData();
-datos.append('estados', 'Mexico')
-fetch('php/procesar-estados.php', {
-    method: 'post',
-    body: datos
-})
-
+fetch('json/edos-municipios.json')
 .then(res => res.json())
 .then(data => {
-    console.log(data.Mexico);
-    for(let estado of data.Mexico){
-        addInputEstados(estado);
+    for(let estados of data.Mexico){
+        addInputEstados(estados.estado);
     };
-});
 
-estados.addEventListener('change', () => {
-    let estado = document.querySelector("#estado").value;
-    // console.log(estado);
-    let datos = new FormData();
-    datos.append('municipios', estado)
-    fetch('php/procesar-estados.php', {
-        method: 'post',
-        body: datos
-    })
-
-    .then(res => res.json())
-    .then(data => {
-        // console.log(data);
-        inputMunicipio.innerHTML =""
-        for(let municipios of data){
-            addInputMunicipios(municipios);
-        }
-        
+    estados.addEventListener('change', () => {
+        let $estado = document.querySelector("#estado").value;
+        // console.log($estado);
+        let municipio = data.Mexico.find(estado => estado.estado === $estado);
+        // console.log(municipio);
+        inputMunicipio.innerHTML ="";
+        for(let localidad of municipio.municipios){
+            addInputMunicipios(localidad);
+        } 
     });
 });
-
 
 
 //funciones----------->>>>>>>>>>>>>>>

@@ -29,6 +29,6 @@
             <label for="enviar" class="btn__form-estados">Enviar</label>
             <input type="submit" id="enviar">
         </form>
-        <script src="js/edosJson.js"></script>
+        <script src="js/edos.js"></script>
     </body>   
 </html>
