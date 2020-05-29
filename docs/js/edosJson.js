@@ -1,4 +1,6 @@
-console.log('javascript para json');
+// console.log('javascript para json');
+console.log('%c If you have to ask, you\'ll never know. If you know, you need only ask.','background: #000; color: #fff');
+console.log('%c propiedad de https://fb.me/jizradesign','background: #000; color: #fff');
 const estados = document.querySelector('#estado');
 const municipios = document.querySelector('#municipio');
 const inputMunicipio = document.querySelector('#input-municipio');
@@ -38,7 +40,7 @@ form.addEventListener('change', () => {
 form.addEventListener('submit', e => {
     e.preventDefault();
 });
-fetch('json/edos-municipios.json')
+fetch('https://calciferdelioncourt.github.io/form_edos-municipios/json/edos-municipios.json')
 .then(res => res.json())
 .then(data => {
     for(let estados of data.Mexico){
