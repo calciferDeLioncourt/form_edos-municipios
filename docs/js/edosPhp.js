@@ -1,3 +1,5 @@
+console.log('%c If you have to ask, you\'ll never know. If you know, you need only ask.','background: #000; color: #fff');
+console.log('%c propiedad de https://fb.me/jizradesign','background: #000; color: #fff');
 const estados = document.querySelector('#estado');
 const municipios = document.querySelector('#municipio');
 const inputMunicipio = document.querySelector('#input-municipio');
@@ -21,10 +23,18 @@ for( let i=0; i < btnFlecha.length; i++ ){
     })
 };
 estados.addEventListener('change', () => {
-    console.log(estados.value);
+    if(estados.value != "Selecciona tu estado"){
+        estados.style.borderBottom = `solid 2px var(--coloron)`;
+    }else{
+        estados.style.borderBottom = "";
+    }
 });
 municipios.addEventListener('change', () => {
-    console.log(municipios.value);
+    if(municipios.value != "Selecciona tu municipio"){
+        municipios.style.borderBottom = `solid 2px var(--coloron)`;
+    }else{
+        municipios.style.borderBottom = "";
+    }
 });
 form.addEventListener('change', () => {
     if(estados.value != "Selecciona tu estado" && municipios.value != "Selecciona tu municipio"){
@@ -34,9 +44,12 @@ form.addEventListener('change', () => {
     }
 });
 
+//------------- submit-----------------
 form.addEventListener('submit', e => {
     e.preventDefault();
 });
+
+//------llamados ------------------------>>>>>>>>>>>
 let datos = new FormData();
 datos.append('estados', 'Mexico')
 fetch('php/procesar-estados.php', {
@@ -46,7 +59,6 @@ fetch('php/procesar-estados.php', {
 
 .then(res => res.json())
 .then(data => {
-    console.log(data.Mexico);
     for(let estado of data.Mexico){
         addInputEstados(estado);
     };
@@ -61,19 +73,14 @@ estados.addEventListener('change', () => {
         method: 'post',
         body: datos
     })
-
     .then(res => res.json())
     .then(data => {
-        // console.log(data);
         inputMunicipio.innerHTML =""
         for(let municipios of data){
             addInputMunicipios(municipios);
-        }
-        
+        }  
     });
 });
-
-
 
 //funciones----------->>>>>>>>>>>>>>>
 function addInputEstados(data){

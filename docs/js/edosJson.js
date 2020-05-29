@@ -24,10 +24,18 @@ for( let i=0; i < btnFlecha.length; i++ ){
     })
 };
 estados.addEventListener('change', () => {
-    // console.log(estados.value);
+    if(estados.value != "Selecciona tu estado"){
+        estados.style.borderBottom = `solid 2px var(--coloron)`;
+    }else{
+        estados.style.borderBottom = "";
+    }
 });
 municipios.addEventListener('change', () => {
-    // console.log(municipios.value);
+    if(municipios.value != "Selecciona tu municipio"){
+        municipios.style.borderBottom = `solid 2px var(--coloron)`;
+    }else{
+        municipios.style.borderBottom = "";
+    }
 });
 form.addEventListener('change', () => {
     if(estados.value != "Selecciona tu estado" && municipios.value != "Selecciona tu municipio"){
@@ -37,9 +45,12 @@ form.addEventListener('change', () => {
     }
 });
 
+
 form.addEventListener('submit', e => {
     e.preventDefault();
 });
+//------llamados------------------------>>>>>>>>>>>>>>
+
 fetch('https://calciferdelioncourt.github.io/form_edos-municipios/json/edos-municipios.json')
 .then(res => res.json())
 .then(data => {
@@ -58,7 +69,7 @@ fetch('https://calciferdelioncourt.github.io/form_edos-municipios/json/edos-muni
         } 
     });
 });
-
+//------------------------------------------------------------
 
 //funciones----------->>>>>>>>>>>>>>>
 function addInputEstados(data){

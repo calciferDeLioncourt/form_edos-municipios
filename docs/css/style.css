@@ -123,6 +123,7 @@ body{
     text-align: center;
     margin: 1em auto;
     border: solid 2px var(--coloroff);
+    color: var(--coloron);
     padding: 5px 50px;
     cursor: pointer;
     transition: all 0.5s;
@@ -134,9 +135,7 @@ body{
 .btn__form-estados.on:active{
     transform: scale(.9);
 }
-.btn__form-estados:hover{
-    background: var(--coloron);
-    color: #fff;
+.btn__form-estados.on:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 input[type="submit"]{

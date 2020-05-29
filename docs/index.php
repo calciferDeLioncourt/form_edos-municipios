@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Estados || Municipios</title>
+		<title>Estados | Municipios | PHP</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
 		<script src="https://kit.fontawesome.com/1f8614daef.js" crossorigin="anonymous"></script>
@@ -10,7 +10,9 @@
 	</head>
     <body>
         <form class="form-estados" id="form-estados">
-            <h1 class="title__form-estados">Selecciona tu estado y municipio</h1>
+            <div class="banner__form-estados">
+                <h1 class="title__form-estados">Selecciona tu estado y municipio</h1>
+            </div>
             <label for="estado" class="etiqueta__form-estados">Estado :</label>
             <div class="cont__form-estados select">
                 <select id="estado" name="estado" class="select__form-estados">
@@ -29,6 +31,6 @@
             <label for="enviar" class="btn__form-estados">Enviar</label>
             <input type="submit" id="enviar">
         </form>
-        <script src="js/edos.js"></script>
+        <script src="js/edosPhp.js"></script>
     </body>   
 </html>
