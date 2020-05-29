@@ -8,6 +8,7 @@
     --coloroff:rgb(159, 191, 252);
     --coloron: rgb(52, 102, 146);
     --colorTexto: rgb(211, 195, 49);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)!important;
 }
 body{
     display: flex;
