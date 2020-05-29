@@ -128,7 +128,10 @@ body{
 }
 .btn__form-estados.on{
     background: var(--coloron);
-    color: #fff;
+    color: #fff;;
+}
+.btn__form-estados.on:active{
+    transform: scale(.9);
 }
 .btn__form-estados:hover{
     background: var(--coloron);
