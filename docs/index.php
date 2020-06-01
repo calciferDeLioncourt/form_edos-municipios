@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
 		<script src="https://kit.fontawesome.com/1f8614daef.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://jizradesign.github.io/releases/social-bar.css">
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 	</head>
     <body>
@@ -31,6 +32,7 @@
             <label for="enviar" class="btn__form-estados">Enviar</label>
             <input type="submit" id="enviar">
         </form>
+        <script src="https://jizradesign.github.io/releases/social-bar.js"></script>
         <script src="js/edosPhp.js"></script>
     </body>   
 </html>
